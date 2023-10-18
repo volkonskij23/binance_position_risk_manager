@@ -1,0 +1,13 @@
+[Unit]
+Description=Dummy Service
+After=multi-user.target
+Conflicts=getty@tty1.service
+
+[Service]
+WorkingDirectory=/root/binance_pos
+Type=simple
+ExecStart=/usr/bin/python3 main.py
+Restart=on-failure
+RestartSec=5
+[Install]
+WantedBy=multi-user.target
